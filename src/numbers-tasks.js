@@ -105,9 +105,12 @@ function getLinearEquationRoot(a, b) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
-  /* const multipleVectors = x1 * x2 + y1 * y2;  const multipleModalVectors = Math.sqrt(x1 ** 2 + y1 ** 2) + Math.sqrt(x2 ** 2 + y2 ** 2);return Math.acos(multipleVectors / multipleModalVectors); */
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const multipleVectors = x1 * x2 + y1 * y2;
+  const multipleModalVectorOne = Math.sqrt(x1 ** 2 + y1 ** 2);
+  const multipleModalVectorTwo = Math.sqrt(x2 ** 2 + y2 ** 2);
+  const multipleModalVectors = multipleModalVectorOne * multipleModalVectorTwo;
+  return Math.acos(multipleVectors / multipleModalVectors);
 }
 
 /**
